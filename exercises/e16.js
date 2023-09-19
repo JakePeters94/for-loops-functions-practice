@@ -6,8 +6,20 @@
 // NOTE: You can NOT use the array.flat() method in your code
 
 export function flatArrays(array) {
-  // Your code goes here...
+  const flattenedArray = [];
+  const stack = [...array];
 
+  while (stack.length) {
+    const nextItem = stack.pop();
+
+    if (Array.isArray(nextItem)) {
+      stack.push(...nextItem);
+    } else {
+      flattenedArray.unshift(nextItem);
+    }
+  }
+
+  return flattenedArray;
 }
 
 
