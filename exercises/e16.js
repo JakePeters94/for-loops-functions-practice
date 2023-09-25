@@ -7,15 +7,14 @@
 
 export function flatArrays(array) {
   const flattenedArray = [];
-  const stack = [...array];
 
-  while (stack.length) {
-    const nextItem = stack.pop();
-
-    if (Array.isArray(nextItem)) {
-      stack.push(...nextItem);
+  for (let i = 0; i < array.length; i++) {
+    if (Array.isArray(array[i])) {
+      for (let j = 0; j < array[i].length; j++) {
+        flattenedArray.push(array[i][j]);
+      }
     } else {
-      flattenedArray.unshift(nextItem);
+      flattenedArray.push(array[i]);
     }
   }
 

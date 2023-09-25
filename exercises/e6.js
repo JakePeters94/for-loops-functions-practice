@@ -8,7 +8,7 @@ export function getClientWithNoMoney(array) {
 
   for (let i = 0; i < array.length; i++) {
     const account = array[i];
-    if (account.balance <= 0) {
+    if (account.balance === 0) {
       brokies.push(account.name);
     }
   }

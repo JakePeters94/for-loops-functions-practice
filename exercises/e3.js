@@ -13,8 +13,7 @@ export function getAverage(array) {
   for(var i = 0; i < array.length; i++){
     total += array[i];
   }
-  var avg = total / array.length;
-  return avg;
+  return total / array.length;
 }
 
 
@@ -26,27 +25,13 @@ export function getAverage(array) {
  * */ 
 
 export function getStringSum(str) {
-  let sum = 0;
-  let currentNumber = '';
-
-  for (let i = 0; i < str.length; i++) {
-    const char = str[i];
-
-    if (char >= '0' && char <= '9') {
-      currentNumber += char;
-    } else {
-      for (let j = 0; j < currentNumber.length; j++) {
-        sum += parseInt(currentNumber[j]);
-      }
-      currentNumber = '';
+  let numTotal = 0;
+  for(let element of str) {
+    if(parseInt(element)) {
+      numTotal += +element;
     }
   }
-
-  for (let j = 0; j < currentNumber.length; j++) {
-    sum += parseInt(currentNumber[j]);
-  }
-
-  return sum;
+  return numTotal;
 }
 
 // === TEST YOURSELF ===
